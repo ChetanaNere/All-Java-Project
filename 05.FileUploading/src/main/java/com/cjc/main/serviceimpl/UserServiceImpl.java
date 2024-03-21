@@ -1,6 +1,7 @@
 package com.cjc.main.serviceimpl;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,6 +39,15 @@ public class UserServiceImpl implements UserService{
 		}
 	
 		return null;
+	}
+	@Override
+	public List<User> getAllUsers() {
+		List<User> users=(List<User>) ur.findAll();
+		return users;
+	}
+	@Override
+	public void deleteData(int userID) {
+		ur.deleteById(userID);	
 	}
 
 }
