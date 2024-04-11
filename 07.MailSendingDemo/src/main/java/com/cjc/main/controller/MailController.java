@@ -30,6 +30,6 @@ public class MailController {
 	{
 		ms.sendMailWithAttachment(mailInfo,file);
 		
-		return new ResponseEntity<String>("AttachFile Send..", HttpStatus.OK);
+		return new ResponseEntity<String>(" AttachFile Send..", HttpStatus.OK);
 	}
 }
