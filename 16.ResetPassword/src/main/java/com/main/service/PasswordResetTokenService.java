@@ -39,15 +39,6 @@ public class PasswordResetTokenService {
         return token;
     }
 
-//    public boolean validateToken(String token) {
-//        Optional<PasswordResetToken> optionalToken = tokenRepository.findByToken(token);
-//        if (!optionalToken.isPresent()) {
-//            throw new IllegalArgumentException("Invalid token");
-//        }
-//
-//        PasswordResetToken resetToken = optionalToken.get();
-//        return resetToken.getExpiryDate().isAfter(LocalDateTime.now());
-//    }
     public boolean validateToken(String token) {
         Optional<PasswordResetToken> optionalToken = tokenRepository.findByToken(token);
         if (!optionalToken.isPresent()) {
