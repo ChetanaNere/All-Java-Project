@@ -10,9 +10,7 @@ import com.main.model.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>
 {
-	
-	
-//	public User findByResetToken(String resetToken);
+
 	public User findByUsernameAndPassword(String username, String password);
 	public Optional<User> findByEmail(String email);
 	Optional<User> findByResetToken(String resetToken);

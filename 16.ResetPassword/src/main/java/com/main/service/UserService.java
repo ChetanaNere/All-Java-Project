@@ -17,13 +17,11 @@ import com.main.repository.UserRepository;
 public class UserService {
     @Autowired
     private UserRepository userRepository;
-//    @Autowired
-//    private PasswordEncoder passwordEncoder;
+
     
     // Registration logic
     public User registerUser(User user) {
-        // user.setPassword(passwordEncoder.encode(user.getPassword()));
-         return userRepository.save(user);
+           return userRepository.save(user);
      }
 
 
@@ -36,16 +34,8 @@ public class UserService {
     public List<User> getAllUsers()
     {
 		return userRepository.findAll();
-}
-    
-    
-    
-//    public void updatePassword(String email, String newPassword) {
-//        Optional<User> user = userRepository.findByEmail(email);
-//               // .orElseThrow(() -> new UsernameNotFoundException("User not found"));
-//        user.setPassword(newPassword); // Make sure to encode the password
-//        userRepository.save(user);
-//    }
+    }
+   
     
     public void updatePassword(String email, String newPassword) {
         Optional<User> userOptional = userRepository.findByEmail(email);
